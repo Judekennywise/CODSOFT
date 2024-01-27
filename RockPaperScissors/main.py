@@ -85,7 +85,7 @@ class RockPaperScissorsGame:
 
         self.display_choices(player1_guess, CPU_guess)
         self.display_result(result)
-        self.display_scores()
+        self.display_scores(result)
         
 
         if self.round_count == self.max_rounds:
@@ -107,8 +107,8 @@ class RockPaperScissorsGame:
     def display_result(self, result):
         self.score_label.config(text=result)
 
-    def display_scores(self):
-        scores_text = f" Scores - {self.player1}: {self.player1_score}, {self.player2}: {self.player2_score}"
+    def display_scores(self, result):
+        scores_text = f" {result} - {self.player1}: {self.player1_score}, {self.player2}: {self.player2_score}"
         self.score_label.config(text=scores_text)
 
     def display_final_scores(self):
@@ -116,7 +116,7 @@ class RockPaperScissorsGame:
         if self.player1_score > self.player2_score:
             result= "You win"
         elif self.player1_score < self.player2_score:
-            result = "CPU win"
+            result = "CPU wins"
         else:
             result = "It's a draw"
         final_scores_text = f"FINAL SCORES: {result} - {self.player1}: {self.player1_score}, {self.player2}: {self.player2_score}"
