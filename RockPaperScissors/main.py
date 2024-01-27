@@ -28,31 +28,32 @@ class RockPaperScissorsGame:
         self.create_widgets()
 
     def create_widgets(self):
-        self.label = tk.Label(self.root, text="Enter your name:")
-        self.label.pack(pady=10)
+        custom_font = ("Helvetica", 20)
+        self.label = tk.Label(self.root, text="Enter your name:", font=custom_font)
+        self.label.pack(pady=20)
 
-        self.entry_name = tk.Entry(self.root)
-        self.entry_name.pack(pady=10)
+        self.entry_name = tk.Entry(self.root, font=custom_font)
+        self.entry_name.pack(pady=20)
 
-        self.start_button = tk.Button(self.root, text="Start Game", command=self.start_game)
+        self.start_button = tk.Button(self.root, text="Start Game", command=self.start_game, font=("Helvetica", 10))
         self.start_button.pack()
 
-        self.round_label = tk.Label(self.root, text="Round: 0")
+        self.round_label = tk.Label(self.root, text="Round: 0", font=custom_font)
         self.round_label.pack()
 
-        self.choice_label = tk.Label(self.root, text= f"This is a set of rounds. You can play upto 5 times in a set. \nChoose: R for Rock, S for Scissors, P for Paper")
+        self.choice_label = tk.Label(self.root, text= f"This is a set of rounds. You can play up to 5 times in a set. \nChoose: R for Rock, S for Scissors, P for Paper", font=custom_font)
         self.choice_label.pack()
 
-        self.entry = tk.Entry(self.root)
+        self.entry = tk.Entry(self.root,font=custom_font)
         self.entry.pack(pady=10)
 
-        self.play_button = tk.Button(self.root, text="Play", command=self.play_round, state=tk.DISABLED)
+        self.play_button = tk.Button(self.root, text="Play", command=self.play_round, state=tk.DISABLED, font=("Helvetica", 10))
         self.play_button.pack()
 
-        self.result_label = tk.Label(self.root, text="")
+        self.result_label = tk.Label(self.root, text="", font=custom_font)
         self.result_label.pack()
 
-        self.score_label = tk.Label(self.root, text="")
+        self.score_label = tk.Label(self.root, text="", font=custom_font)
         self.score_label.pack()
 
     def start_game(self):
