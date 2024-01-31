@@ -65,7 +65,7 @@ class RockPaperScissorsGame:
         self.entry_name.destroy()
         self.start_button.destroy()
         self.round_label.config(text=f"Round: {self.round_count + 1}")
-        self.label = tk.Label(self.root, text=f"Welcome, {self.player1}!")
+        self.label = tk.Label(self.root, text=f"Welcome, {self.player1}!", font=("Helvetica", 20))
         self.label.pack(pady=10)
         self.play_button.config(state=tk.NORMAL)
 
